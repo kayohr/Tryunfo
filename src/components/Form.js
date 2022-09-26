@@ -1,46 +1,95 @@
+import PropTypes from 'prop-types';
 import React from 'react';
 
 class Form extends React.Component {
   render() {
+    const {
+      cardName,
+      cardDescription,
+      cardAttr1,
+      cardAttr2,
+      cardAttr3,
+      cardImage,
+      cardRare,
+      cardTrunfo,
+      // hasTrunfo,
+      isSaveButtonDisabled,
+      onInputChange,
+      onSaveButtonClick,
+    } = this.props;
     return (
       <div>
         <form>
 
           {/* Este campo será usado para inserir o nome da carta. */}
           <label htmlFor>
-            <input type="text" data-testid="name-input" />
+            <input
+              type="text"
+              data-testid="name-input"
+              value={ cardName }
+              onChange={ onInputChange }
+            />
           </label>
 
           {/* Este campo será usado para inserir a descrição da carta. */}
           <label htmlFor>
-            <input type="textarea" data-testid="description-input" />
+            <input
+              type="textarea"
+              data-testid="description-input"
+              value={ cardDescription }
+              onChange={ onInputChange }
+            />
           </label>
 
           {/* Este campo será usado para inserir o primeiro atributo da carta. */}
           <label htmlFor>
-            <input type="number" data-testid="attr1-input" />
+            <input
+              type="number"
+              data-testid="attr1-input"
+              value={ cardAttr1 }
+              onChange={ onInputChange }
+            />
           </label>
 
           {/* Este campo será usado para inserir o segundo atributo da carta */}
           <label htmlFor>
-            <input type="number" data-testid="attr2-input" />
+            <input
+              type="number"
+              data-testid="attr2-input"
+              value={ cardAttr2 }
+              onChange={ onInputChange }
+            />
           </label>
 
           {/* Este campo será usado para inserir o terceiro atributo da carta */}
           <label htmlFor>
-            <input type="number" data-testid="attr3-input" />
+            <input
+              type="number"
+              data-testid="attr3-input"
+              value={ cardAttr3 }
+              onChange={ onInputChange }
+            />
           </label>
 
           {/* Este campo será usado para inserir o caminho para imagem da carta. */}
           <label htmlFor>
-            <input type="texte" data-testid="image-input" />
+            <input
+              type="texte"
+              data-testid="image-input"
+              value={ cardImage }
+              onChange={ onInputChange }
+            />
           </label>
 
           {/* Este campo será usado para inserir a raridade da carta e deverá ter as options
           : normal, raro e muito raro. */}
           <label htmlFor>
             {/* <input type="select" data-testid="rare-input" */}
-            <select data-testid="rare-input">
+            <select
+              data-testid="rare-input"
+              value={ cardRare }
+              onChange={ onInputChange }
+            >
               <option value="normal">normal</option>
               <option value="raro">raro</option>
               <option value="muito raro">muito raro</option>
@@ -50,12 +99,25 @@ class Form extends React.Component {
 
           {/* Este campo será usado para inserir se a carta é o Super Trunfo. */}
           <label htmlFor>
-            <input type="checkbox" data-testid="trunfo-input" />
+            <input
+              type="checkbox"
+              data-testid="trunfo-input"
+              checked={ cardTrunfo }
+              onChange={ onInputChange }
+            />
           </label>
 
           {/* um buttonque contenha o atributo data-testid="save-button" e que tenha o texto "Salvar". */}
           {/* <label htmlFor> */}
-          <button type="submit" data-testid="save-button">Salvar</button>
+          <button
+            type="submit"
+            data-testid="save-button"
+            disabled={ isSaveButtonDisabled }
+            onClick={ onSaveButtonClick }
+          >
+            Salvar
+
+          </button>
           {/* </label> */}
 
         </form>
@@ -63,5 +125,20 @@ class Form extends React.Component {
     );
   }
 }
+
+Form.propTypes = {
+  cardName: PropTypes.string.isRequired,
+  cardDescription: PropTypes.string.isRequired,
+  cardAttr1: PropTypes.string.isRequired,
+  cardAttr2: PropTypes.string.isRequired,
+  cardAttr3: PropTypes.string.isRequired,
+  cardImage: PropTypes.string.isRequired,
+  cardRare: PropTypes.bool.isRequired,
+  cardTrunfo: PropTypes.bool.isRequired,
+  // hasTrunfo: PropTypes.bool.isRequired,
+  isSaveButtonDisabled: PropTypes.bool.isRequired,
+  onInputChange: PropTypes.func.isRequired,
+  onSaveButtonClick: PropTypes.func.isRequired,
+};
 
 export default Form;
