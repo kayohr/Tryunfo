@@ -1,4 +1,3 @@
-/* eslint-disable jsx-a11y/control-has-associated-label */
 import React from 'react';
 
 class Form extends React.Component {
@@ -17,8 +16,7 @@ class Form extends React.Component {
             <input type="textarea" data-testid="description-input" />
           </label>
 
-          {/* Este campo será usado para inserir o primeiro atributo da carta.
-        Ele é livre para você adicionar o atributo que mais combinar com o seu baralho. */}
+          {/* Este campo será usado para inserir o primeiro atributo da carta. */}
           <label htmlFor>
             <input type="number" data-testid="attr1-input" />
           </label>
@@ -39,13 +37,13 @@ class Form extends React.Component {
           </label>
 
           {/* Este campo será usado para inserir a raridade da carta e deverá ter as options
-          : normal, raro e muito raro (é importante que as opções estejam nessa ordem). */}
+          : normal, raro e muito raro. */}
           <label htmlFor>
             {/* <input type="select" data-testid="rare-input" */}
             <select data-testid="rare-input">
-              <option value="normal" />
-              <option value="raro" />
-              <option value="muito raro" />
+              <option value="normal">normal</option>
+              <option value="raro">raro</option>
+              <option value="muito raro">muito raro</option>
             </select>
             {/* /> */}
           </label>
