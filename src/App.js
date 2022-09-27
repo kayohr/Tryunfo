@@ -30,7 +30,7 @@ class App extends React.Component {
   };
 
   bttDisabled = () => {
-    const { name, description, image, rare, attr1, attr2, attr3, isSaveButtonDisabled } = this.state;
+    const { name, description, image, attr1, attr2, attr3 } = this.state;
     // if ([name].includes('')) {
     //   return false;  this.setState?
     // }
