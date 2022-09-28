@@ -12,7 +12,7 @@ class Form extends React.Component {
       cardImage,
       cardRare,
       cardTrunfo,
-      // hasTrunfo,
+      hasTrunfo,
       isSaveButtonDisabled,
       onInputChange,
       onSaveButtonClick,
@@ -22,7 +22,7 @@ class Form extends React.Component {
         <form>
 
           {/* Este campo será usado para inserir o nome da carta. */}
-          <label htmlFor>
+          <label htmlFor="cardName">
             <input
               type="text"
               data-testid="name-input"
@@ -33,7 +33,7 @@ class Form extends React.Component {
           </label>
 
           {/* Este campo será usado para inserir a descrição da carta. */}
-          <label htmlFor>
+          <label htmlFor="cardDescription">
             <input
               type="textarea"
               data-testid="description-input"
@@ -44,7 +44,7 @@ class Form extends React.Component {
           </label>
 
           {/* Este campo será usado para inserir o primeiro atributo da carta. */}
-          <label htmlFor>
+          <label htmlFor="cardAttr1">
             <input
               type="number"
               data-testid="attr1-input"
@@ -55,7 +55,7 @@ class Form extends React.Component {
           </label>
 
           {/* Este campo será usado para inserir o segundo atributo da carta */}
-          <label htmlFor>
+          <label htmlFor="cardAttr2">
             <input
               type="number"
               data-testid="attr2-input"
@@ -66,7 +66,7 @@ class Form extends React.Component {
           </label>
 
           {/* Este campo será usado para inserir o terceiro atributo da carta */}
-          <label htmlFor>
+          <label htmlFor="cardAttr3">
             <input
               type="number"
               data-testid="attr3-input"
@@ -77,7 +77,7 @@ class Form extends React.Component {
           </label>
 
           {/* Este campo será usado para inserir o caminho para imagem da carta. */}
-          <label htmlFor>
+          <label htmlFor="cardImage">
             <input
               type="texte"
               data-testid="image-input"
@@ -89,7 +89,7 @@ class Form extends React.Component {
 
           {/* Este campo será usado para inserir a raridade da carta e deverá ter as options
           : normal, raro e muito raro. */}
-          <label htmlFor>
+          <label htmlFor="cardRare">
             {/* <input type="select" data-testid="rare-input" */}
             <select
               data-testid="rare-input"
@@ -105,15 +105,17 @@ class Form extends React.Component {
           </label>
 
           {/* Este campo será usado para inserir se a carta é o Super Trunfo. */}
-          <label htmlFor>
-            <input
-              type="checkbox"
-              data-testid="trunfo-input"
-              checked={ cardTrunfo }
-              onChange={ onInputChange }
-              name="cTrunfo"
-            />
-          </label>
+          {hasTrunfo ? (<p>Você já tem um Super Trunfo em seu baralho</p>) : (
+            <label htmlFor="cardTrunfo">
+              <input
+                type="checkbox"
+                data-testid="trunfo-input"
+                checked={ cardTrunfo }
+                onChange={ onInputChange }
+                name="cTrunfo"
+              />
+            </label>
+          )}
 
           {/* um buttonque contenha o atributo data-testid="save-button" e que tenha o texto "Salvar". */}
           {/* <label htmlFor> */}
@@ -141,9 +143,9 @@ Form.propTypes = {
   cardAttr2: PropTypes.string.isRequired,
   cardAttr3: PropTypes.string.isRequired,
   cardImage: PropTypes.string.isRequired,
-  cardRare: PropTypes.bool.isRequired,
+  cardRare: PropTypes.string.isRequired,
   cardTrunfo: PropTypes.bool.isRequired,
-  // hasTrunfo: PropTypes.bool.isRequired,
+  hasTrunfo: PropTypes.bool.isRequired,
   isSaveButtonDisabled: PropTypes.bool.isRequired,
   onInputChange: PropTypes.func.isRequired,
   onSaveButtonClick: PropTypes.func.isRequired,

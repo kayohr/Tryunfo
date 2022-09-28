@@ -13,8 +13,8 @@ class App extends React.Component {
       attr3: '',
       image: '',
       rare: '',
-      cTrunfo: '',
-      // hTrunfo: '',
+      cTrunfo: false,
+      hTrunfo: false,
       isSaveButtonDisabled: true,
       // onInputChange: '',
       // onSaveButtonClick: '',
@@ -68,10 +68,13 @@ class App extends React.Component {
 
   onSaveButtonClick = (e) => {
     e.preventDefault();
-    const { name, description, image, attr1, attr2, attr3, rare } = this.state;
-    const newCard = { name, description, image, attr1, attr2, attr3, rare };
+    const { name, description, image, attr1,
+      attr2, attr3, rare, cTrunfo, hTrunfo } = this.state;
+    const newCard = { name, description, image, attr1, attr2, attr3, rare, cTrunfo };
+    const valorTrunfo = hTrunfo || cTrunfo;
     if (newCard) {
       this.setState((prevState) => ({
+        hTrunfo: valorTrunfo,
         savedCards: [...prevState.savedCards, newCard],
         name: '',
         description: '',
@@ -80,6 +83,7 @@ class App extends React.Component {
         attr2: 0,
         attr3: 0,
         rare: '',
+        cTrunfo: false,
       }));
     //   this.setState = {
     //     name: '',
@@ -103,7 +107,8 @@ class App extends React.Component {
       rare,
       cTrunfo,
       isSaveButtonDisabled,
-      // savedCards
+      hTrunfo,
+      savedCards,
     } = this.state;
     return (
       <>
@@ -116,6 +121,7 @@ class App extends React.Component {
           cardImage={ image }
           cardRare={ rare }
           cardTrunfo={ cTrunfo }
+          hasTrunfo={ hTrunfo }
           onInputChange={ this.onInputChange }
           isSaveButtonDisabled={ isSaveButtonDisabled }
           // savedCards={ savedCards }
@@ -131,6 +137,18 @@ class App extends React.Component {
           cardRare={ rare }
           cardTrunfo={ cTrunfo }
         />
+        <hr />
+        {savedCards.map((item, index) => (<Card
+          key={ index }
+          cardName={ item.name }
+          cardDescription={ item.description }
+          cardAttr1={ item.attr1 }
+          cardAttr2={ item.attr2 }
+          cardAttr3={ item.attr3 }
+          cardImage={ item.image }
+          cardRare={ item.rare }
+          cardTrunfo={ item.cTrunfo }
+        />))}
       </>
     );
   }

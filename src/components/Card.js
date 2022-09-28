@@ -15,31 +15,31 @@ class Card extends React.Component {
     } = this.props;
     return (
       <div>
-        <label htmlFor>
+        <div>
           <p data-testid="name-card">{ cardName }</p>
-        </label>
+        </div>
 
         <img src={ cardImage } alt={ cardName } data-testid="image-card" />
 
-        <label htmlFor>
+        <div>
           <p data-testid="description-card">{ cardDescription }</p>
-        </label>
+        </div>
 
-        <label htmlFor>
+        <div>
           <p data-testid="attr1-card">{ cardAttr1 }</p>
-        </label>
+        </div>
 
-        <label htmlFor>
+        <div>
           <p data-testid="attr2-card">{ cardAttr2 }</p>
-        </label>
+        </div>
 
-        <label htmlFor>
+        <div>
           <p data-testid="attr3-card">{ cardAttr3 }</p>
-        </label>
+        </div>
 
-        <label htmlFor>
+        <div>
           <p data-testid="rare-card">{ cardRare }</p>
-        </label>
+        </div>
 
         <p>{cardTrunfo ? <p data-testid="trunfo-card">Super Trunfo</p> : '' }</p>
 
@@ -55,7 +55,7 @@ Card.propTypes = {
   cardAttr2: PropTypes.string.isRequired,
   cardAttr3: PropTypes.string.isRequired,
   cardImage: PropTypes.string.isRequired,
-  cardRare: PropTypes.bool.isRequired,
+  cardRare: PropTypes.string.isRequired,
   cardTrunfo: PropTypes.bool.isRequired,
 };
 
