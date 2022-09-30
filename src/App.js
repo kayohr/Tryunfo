@@ -97,7 +97,7 @@ class App extends React.Component {
     }
   };
 
-  cardREmove = (select) => {
+  cardREmove = (select) => { // Explicação e ajuda da Ellen e Ivan
     // console.log(select);
     const { savedCards, hTrunfo } = this.state;
     const cardRestantes = savedCards.filter((deck) => deck.name !== select.name);
