@@ -140,6 +140,7 @@ class App extends React.Component {
           onSaveButtonClick={ this.onSaveButtonClick }
           cardREmove={ this.cardREmove }
         />
+
         <Card
           cardName={ name }
           cardDescription={ description }
@@ -150,28 +151,30 @@ class App extends React.Component {
           cardRare={ rare }
           cardTrunfo={ cTrunfo }
         />
-        <hr />
-        { (savedCards.map((item, index) => (
-          <div key={ index }>
-            <Card
-              cardName={ item.name }
-              cardDescription={ item.description }
-              cardAttr1={ item.attr1 }
-              cardAttr2={ item.attr2 }
-              cardAttr3={ item.attr3 }
-              cardImage={ item.image }
-              cardRare={ item.rare }
-              cardTrunfo={ item.cTrunfo }
-            />
-            <button
-              data-testid="delete-button"
-              type="submit"
-              onClick={ () => this.cardREmove(item) }
-            >
-              Excluir
-            </button>
-          </div>
-        )))}
+        <div className="test4">
+          <hr />
+          { (savedCards.map((item, index) => (
+            <div key={ index }>
+              <Card
+                cardName={ item.name }
+                cardDescription={ item.description }
+                cardAttr1={ item.attr1 }
+                cardAttr2={ item.attr2 }
+                cardAttr3={ item.attr3 }
+                cardImage={ item.image }
+                cardRare={ item.rare }
+                cardTrunfo={ item.cTrunfo }
+              />
+              <button
+                data-testid="delete-button"
+                type="submit"
+                onClick={ () => this.cardREmove(item) }
+              >
+                Excluir
+              </button>
+            </div>
+          )))}
+        </div>
       </>
     );
   }

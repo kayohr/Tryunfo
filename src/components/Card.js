@@ -14,27 +14,45 @@ class Card extends React.Component {
       cardTrunfo,
     } = this.props;
     return (
-      <div>
-        <div>
-          <p data-testid="name-card">{ cardName }</p>
+      <div className="test2">
+        <div className="test3">
+          <p data-testid="name-card">
+            { cardName }
+
+          </p>
         </div>
 
         <img src={ cardImage } alt={ cardName } data-testid="image-card" />
 
         <div>
-          <p data-testid="description-card">{ cardDescription }</p>
+          <p data-testid="description-card">
+            { cardDescription }
+
+          </p>
         </div>
 
         <div>
-          <p data-testid="attr1-card">{ cardAttr1 }</p>
+          <p data-testid="attr1-card">
+            { cardAttr1 }
+            {' '}
+            Force
+          </p>
         </div>
 
         <div>
-          <p data-testid="attr2-card">{ cardAttr2 }</p>
+          <p data-testid="attr2-card">
+            { cardAttr2 }
+            {' '}
+            Speed
+          </p>
         </div>
 
         <div>
-          <p data-testid="attr3-card">{ cardAttr3 }</p>
+          <p data-testid="attr3-card">
+            { cardAttr3 }
+            {' '}
+            Spirit power
+          </p>
         </div>
 
         <div>

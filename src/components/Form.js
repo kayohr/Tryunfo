@@ -19,11 +19,12 @@ class Form extends React.Component {
     } = this.props;
     return (
       <div>
-        <form>
+        <form className="test">
 
           {/* Este campo será usado para inserir o nome da carta. */}
           <label htmlFor="cardName">
             <input
+              placeholder="Name card"
               type="text"
               data-testid="name-input"
               value={ cardName }
@@ -35,6 +36,7 @@ class Form extends React.Component {
           {/* Este campo será usado para inserir a descrição da carta. */}
           <label htmlFor="cardDescription">
             <input
+              placeholder="Description card"
               type="textarea"
               data-testid="description-input"
               value={ cardDescription }
@@ -46,39 +48,49 @@ class Form extends React.Component {
           {/* Este campo será usado para inserir o primeiro atributo da carta. */}
           <label htmlFor="cardAttr1">
             <input
+              placeholder="Attribute 1-Force"
               type="number"
               data-testid="attr1-input"
               value={ cardAttr1 }
               onChange={ onInputChange }
               name="attr1"
             />
+            {' '}
+            Force
           </label>
 
           {/* Este campo será usado para inserir o segundo atributo da carta */}
           <label htmlFor="cardAttr2">
             <input
+              placeholder="Attribute 2-Speed"
               type="number"
               data-testid="attr2-input"
               value={ cardAttr2 }
               onChange={ onInputChange }
               name="attr2"
             />
+            Speed
           </label>
 
           {/* Este campo será usado para inserir o terceiro atributo da carta */}
           <label htmlFor="cardAttr3">
             <input
+              placeholder="Attribute 3-Spirit power
+              "
               type="number"
               data-testid="attr3-input"
               value={ cardAttr3 }
               onChange={ onInputChange }
               name="attr3"
             />
+            {' '}
+            Spirit power
           </label>
 
           {/* Este campo será usado para inserir o caminho para imagem da carta. */}
           <label htmlFor="cardImage">
             <input
+              placeholder="URL image"
               type="texte"
               data-testid="image-input"
               value={ cardImage }
@@ -92,14 +104,15 @@ class Form extends React.Component {
           <label htmlFor="cardRare">
             {/* <input type="select" data-testid="rare-input" */}
             <select
+              placeholder="Rare"
               data-testid="rare-input"
               value={ cardRare }
               onChange={ onInputChange }
               name="rare"
             >
-              <option value="normal">normal</option>
-              <option value="raro">raro</option>
-              <option value="muito raro">muito raro</option>
+              <option value="Normal">Normal</option>
+              <option value="Raro">Raro</option>
+              <option value="Muito raro">Muito raro</option>
             </select>
             {/* /> */}
           </label>
