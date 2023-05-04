@@ -1,13 +1,5 @@
-# :construction: README customizado em construção ! :construction:
-<!-- Olá, Tryber!
-Esse é apenas um arquivo inicial para o README do seu projeto no qual você pode customizar e reutilizar todas as vezes que for executar o trybe-publisher.
+Tryunfo é uma aplicação que pega URL das imagens para criar os persongens, ao colar a URL, você cria um card com os poderes e descrição que achar melhor para o personagem, existem 4 classses, normal, raro, muito raro e Super Trunfo, onde só pode ter um Super Trunfo.
 
-Para deixá-lo com a sua cara, basta alterar o seguinte arquivo da sua máquina: ~/.student-repo-publisher/custom/_NEW_README.md
+O projeto feito em React, Javascript e CSS.
 
-É essencial que você preencha esse documento por conta própria, ok?
-Não deixe de usar nossas dicas de escrita de README de projetos, e deixe sua criatividade brilhar!
-:warning: IMPORTANTE: você precisa deixar nítido:
-- quais arquivos/pastas foram desenvolvidos por você; 
-- quais arquivos/pastas foram desenvolvidos por outra pessoa estudante;
-- quais arquivos/pastas foram desenvolvidos pela Trybe.
--->
+Link: https://tryunfo-gold.vercel.app/
